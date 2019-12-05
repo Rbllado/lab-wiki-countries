@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import countries from "../countries.json";
+import { Route, Switch, Link } from "react-router-dom";
 
 export default class CountryDetail extends Component {
     constructor(props){
@@ -20,8 +21,7 @@ export default class CountryDetail extends Component {
         //send to function to find countru from library with the cca3
         const foundCountry = this.findCountry(cca3);        
         return (
-            <div>
-                <h1>Country Detail</h1>
+            <div className="list-group">
                 <h2>{foundCountry.name.official}</h2>
                 <h2>Capital: {foundCountry.capital}</h2>
                 <h2>Area: {foundCountry.area} KM2</h2>
@@ -30,7 +30,7 @@ export default class CountryDetail extends Component {
                 // It is taking from all the cca3 border, one cca3 for each iteration. ['vdv', 'sdf']
                 foundCountry.borders.map((cca3, index)=>{
                     const oneBorder = this.findCountry(cca3)
-                    return <ul><li>{oneBorder.name.official}</li> </ul>
+                    return <ul><li className="list-group-item"><Link to={`/countrydetail/${cca3}`} >{oneBorder.name.official}</Link></li> </ul>
                     
                 })
                 }

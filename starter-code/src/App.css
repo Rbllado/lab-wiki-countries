@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  border: 2px solid black
 }
 
 .App-logo {
@@ -30,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+/* .all-countries{
+  width: 20%;
+
+} */
+.all-list{
+height: 70vh;
+overflow: scroll;
+border: 1px solid gray;
+}
+.borders{
+  height: 70vh;
+overflow: scroll;
+border: 1px solid gray;
+}
+

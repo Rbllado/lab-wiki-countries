@@ -14,21 +14,28 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-   
+      <div className="App row">
+     <div className="col-5 all-list">
+        <div className="list-group">
           {this.state.countries.map(country => {
             return (
-              <div >
-
-              <Link to={`/countrydetail/${country.cca3}`}>{country.name.official}</Link>
-              <p> {country.flag} </p>
-              <hr/>
+              <div className="list-group-item list-group-item-action">
+                <Link to={`/countrydetail/${country.cca3}`}>
+                  {country.name.official}
+                </Link>
+                <p> {country.flag} </p>
+                <hr />
               </div>
-            )
+            );
           })}
-          <switch>
-          <Route path="/countrydetail/:cca3" component={CountryDetail}/>
-        </switch>
+        </div>
+        </div>
+
+          <div className="col-7 borders" >
+
+            <Route path="/countrydetail/:cca3"  component={CountryDetail} />
+          </div>
+
       </div>
     );
   }
