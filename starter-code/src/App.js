@@ -17,6 +17,7 @@ class App extends Component {
       <div className="App row">
      <div className="col-5 all-list">
         <div className="list-group">
+          {/* each country has cca3 and we will send this cca3 on the url */}
           {this.state.countries.map(country => {
             return (
               <div className="list-group-item list-group-item-action">
